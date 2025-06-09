@@ -1,73 +1,107 @@
 {
   "epics": [
     {
-      "title": "Core Admin Features",
-      "status": "in-progress",
+      "title": "Project Setup & Scaffolding",
       "user_stories": [
         {
-          "title": "As an admin, I need to manage basic flat information",
-          "status": "completed",
+          "title": "As a developer, I want a clean, minimal scaffold so I can iterate fast.",
           "tasks": [
-            "Add/Edit flat details (number, type, resident name)",
-            "View list of all flats"
+            "Initialize project repo and directory structure",
+            "Set up environment variables or .env",
+            "Create base folders: routes/, models/, views/, components/",
+            "Set up mock database (Supabase, Firebase, or JSON Server)"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Admin Management of Society",
+      "user_stories": [
+        {
+          "title": "As an admin, I want to create and manage flats and residents.",
+          "tasks": [
+            "Create flats model and routes",
+            "Add endpoint to add/edit flat details (block, number, type)",
+            "Create users model with roles (admin, resident)",
+            "Assign resident to a flat"
           ]
         },
         {
-          "title": "As an admin, I need to generate maintenance invoices",
-          "status": "completed",
+          "title": "As an admin, I want to generate maintenance invoices per flat.",
           "tasks": [
-            "Create invoice for a flat",
-            "View invoice list with payment status"
+            "Create maintenance_invoices model and schema",
+            "Add route to generate invoice (flat ID, amount, due date)",
+            "View list of invoices per flat",
+            "Toggle payment status manually"
           ]
         }
       ]
     },
     {
       "title": "Resident Portal",
-      "status": "in-progress",
       "user_stories": [
         {
-          "title": "As a resident, I need to view my maintenance dues",
-          "status": "completed",
+          "title": "As a resident, I want to view my maintenance dues.",
           "tasks": [
-            "Display current dues and due date"
+            "Create route to fetch maintenance invoices by flat ID",
+            "Display dues and payment status in UI",
+            "Show due amount and due date"
           ]
         },
         {
-          "title": "As a resident, I need to submit service requests",
-          "status": "completed",
+          "title": "As a resident, I want to raise complaints about services.",
           "tasks": [
-            "Simple complaint submission form",
-            "View status of my complaints"
+            "Create complaints model and schema",
+            "Add form to submit new complaint (category, description)",
+            "View submitted complaints with status (open/in progress/resolved)"
           ]
         }
       ]
     },
     {
-      "title": "Basic Announcements",
-      "status": "completed",
+      "title": "Communication and Notices",
       "user_stories": [
         {
-          "title": "As an admin, I need to post notices",
-          "status": "completed",
+          "title": "As an admin, I want to post announcements for all residents.",
           "tasks": [
-            "Create notice form",
-            "Display notices to residents"
+            "Create announcements model and route",
+            "UI form to post announcement (title + body)",
+            "Residents can view announcements in a noticeboard UI component"
           ]
         }
       ]
     },
     {
-      "title": "MVP Polish & Launch",
-      "status": "not-started",
+      "title": "Frontend Integration & Routing",
       "user_stories": [
         {
-          "title": "As a developer, I need to ensure core flows work",
-          "status": "not-started",
+          "title": "As a user, I want different dashboards for admin and resident views.",
           "tasks": [
-            "Smoke test critical paths",
-            "Fix any blocking issues",
-            "Prepare for initial deployment"
+            "Implement role-based routing logic",
+            "Resident dashboard: dues, complaints, announcements",
+            "Admin dashboard: invoices, residents, flats, complaints, announcements"
+          ]
+        },
+        {
+          "title": "As a user, I want basic session-like behavior for testing.",
+          "tasks": [
+            "Use localStorage or dummy login switch for role",
+            "Persist role and basic user info across views"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "QA & Feedback Loop",
+      "user_stories": [
+        {
+          "title": "As a developer, I want to verify core flows through manual testing.",
+          "tasks": [
+            "Test resident login → view dues → submit complaint",
+            "Test admin login → post invoice → resolve complaint",
+            "Add console logs / alerts for key interactions",
+            "Push to GitHub + optional deploy to Vercel / Firebase Hosting"
+>>>>>>> aead4577ea64d595e4045e86556cb5ae5063e688
           ]
         }
       ]
