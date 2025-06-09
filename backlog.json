@@ -1,0 +1,76 @@
+{
+  "epics": [
+    {
+      "title": "Core Admin Features",
+      "status": "in-progress",
+      "user_stories": [
+        {
+          "title": "As an admin, I need to manage basic flat information",
+          "status": "completed",
+          "tasks": [
+            "Add/Edit flat details (number, type, resident name)",
+            "View list of all flats"
+          ]
+        },
+        {
+          "title": "As an admin, I need to generate maintenance invoices",
+          "status": "completed",
+          "tasks": [
+            "Create invoice for a flat",
+            "View invoice list with payment status"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Resident Portal",
+      "status": "in-progress",
+      "user_stories": [
+        {
+          "title": "As a resident, I need to view my maintenance dues",
+          "status": "completed",
+          "tasks": [
+            "Display current dues and due date"
+          ]
+        },
+        {
+          "title": "As a resident, I need to submit service requests",
+          "status": "completed",
+          "tasks": [
+            "Simple complaint submission form",
+            "View status of my complaints"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Basic Announcements",
+      "status": "completed",
+      "user_stories": [
+        {
+          "title": "As an admin, I need to post notices",
+          "status": "completed",
+          "tasks": [
+            "Create notice form",
+            "Display notices to residents"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MVP Polish & Launch",
+      "status": "not-started",
+      "user_stories": [
+        {
+          "title": "As a developer, I need to ensure core flows work",
+          "status": "not-started",
+          "tasks": [
+            "Smoke test critical paths",
+            "Fix any blocking issues",
+            "Prepare for initial deployment"
+          ]
+        }
+      ]
+    }
+  ]
+}
