@@ -1,0 +1,149 @@
+/* Role Selector Specific Styles */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.welcomeText {
+  font-size: 24px;
+  color: #666;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.societyName {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #718096;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.roleSelection {
+  margin-bottom: 32px;
+}
+
+.roleCard {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  background: white;
+}
+
+.roleCard:hover {
+  border-color: #cbd5e0;
+  background-color: #f7fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.roleCard.selected {
+  border-color: #4299e1;
+  background-color: #ebf8ff;
+}
+
+.roleIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.residentIcon {
+  background: linear-gradient(135deg, #4fd1c7, #38b2ac);
+}
+
+.adminIcon {
+  background: linear-gradient(135deg, #fc8181, #f56565);
+}
+
+.roleIcon svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+.roleContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.roleTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 6px;
+}
+
+.roleDescription {
+  font-size: 14px;
+  color: #718096;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.radioButton {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e0;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  margin-left: 12px;
+  transition: all 0.2s ease;
+}
+
+.roleCard.selected .radioButton {
+  border-color: #4299e1;
+  background-color: #4299e1;
+}
+
+.roleCard.selected .radioButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .roleCard {
+    padding: 16px;
+  }
+  
+  .roleIcon {
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
+  }
+  
+  .roleTitle {
+    font-size: 16px;
+  }
+  
+  .roleDescription {
+    font-size: 13px;
+  }
+}

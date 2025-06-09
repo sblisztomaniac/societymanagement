@@ -1,0 +1,342 @@
+/* Global reset for full-width app */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Remove any centering or containerization from body */
+body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Root container - full width */
+#root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main app container - full width with comfortable padding */
+.app-container,
+.main-container,
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 40px; /* Comfortable padding - not cramped in corners */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Navigation/Header - full width */
+.header,
+.navbar,
+.top-bar {
+    width: 100%;
+    margin: 0;
+    padding: 15px 40px;
+    background: var(--header-bg, #f8f9fa);
+}
+
+/* Page content - full width with proper spacing */
+.page-content,
+.content-wrapper {
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+    flex: 1;
+}
+
+/* Section spacing - maintains full width */
+.section,
+.content-section {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+/* Forms - full width but with internal spacing */
+.form-container,
+.form-wrapper {
+    width: 100%;
+    padding: 30px;
+    background: var(--card-bg, white);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Tables - full width with proper spacing */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+    background: var(--card-bg, white);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Cards/Grid layouts - full width responsive */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.card {
+    padding: 20px;
+    background: var(--card-bg, white);
+    border-radius: 8px;
+    border: 1px solid var(--border, #e5e7eb);
+}
+
+/* Dashboard layout - full width */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* Sidebar layouts - full width utilization */
+.sidebar-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: var(--sidebar-bg, #f8f9fa);
+    padding: 20px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px 40px;
+    min-width: 0; /* Allows flex item to shrink */
+}
+
+/* Override any framework containers */
+.container,
+.container-fluid,
+.max-w-md,
+.max-w-lg,
+.max-w-xl,
+.max-w-2xl,
+.max-w-4xl {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.primary-button {
+  width: 100%;
+  background: linear-gradient(135deg, #4299e1, #3182ce);
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 32px;
+}
+
+.primary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(66, 153, 225, 0.3);
+}
+
+.primary-button:disabled,
+.primary-button.disabled {
+  background: #e2e8f0;
+  color: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Button and action areas - proper spacing */
+.action-bar,
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Modal dialogs - centered but not cramped */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .app-container,
+    .main-container,
+    .page-container {
+        padding: 15px 20px;
+    }
+    
+    .header,
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .container,
+    .container-fluid {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    .sidebar-layout {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-container,
+    .main-container,
+    .page-container {
+        padding: 10px 15px;
+    }
+    
+    .header,
+    .navbar {
+        padding: 10px 15px;
+    }
+    
+    .container,
+    .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Utility classes for full-width components */
+.full-width {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.no-container {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Ensure no accidental centering */
+.no-center {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+}
+
+/* Role Selector Specific Styles */
+.role-selector-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.role-selector-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 32px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Footer styles */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+
+.footer-subtitle {
+  font-size: 14px;
+  color: #a0aec0;
+}

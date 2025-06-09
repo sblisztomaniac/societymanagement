@@ -2,7 +2,7 @@
   "epics": [
     {
       "title": "Core Admin Features",
-      "status": "in-progress",
+      "status": "completed",
       "user_stories": [
         {
           "title": "As an admin, I need to manage basic flat information",
@@ -24,7 +24,7 @@
     },
     {
       "title": "Resident Portal",
-      "status": "in-progress",
+      "status": "completed",
       "user_stories": [
         {
           "title": "As a resident, I need to view my maintenance dues",
@@ -59,11 +59,11 @@
     },
     {
       "title": "MVP Polish & Launch",
-      "status": "not-started",
+      "status": "in-progress",
       "user_stories": [
         {
           "title": "As a developer, I need to ensure core flows work",
-          "status": "not-started",
+          "status": "in-progress",
           "tasks": [
             "Smoke test critical paths",
             "Fix any blocking issues",

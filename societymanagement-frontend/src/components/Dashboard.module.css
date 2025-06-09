@@ -1,0 +1,181 @@
+/* Dashboard Container */
+.dashboardPage {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Dashboard Header */
+.dashboardHeader {
+  background: white;
+  padding: 20px 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+/* Back Button */
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 16px;
+  transition: color 0.2s ease;
+}
+
+.backButton:hover {
+  color: #2563eb;
+}
+
+.backButton svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+/* Dashboard Title */
+.dashboardTitle h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 4px 0;
+}
+
+.dashboardSubtitle {
+  color: #6b7280;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Navigation Tabs */
+.dashboardNav {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.dashboardNav::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.navTab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.navTab:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.navTab.active {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+.navTab svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+/* Dashboard Content */
+.dashboardContent {
+  padding: 24px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboardHeader,
+  .dashboardContent {
+    padding: 16px 20px;
+  }
+  
+  .dashboardNav {
+    gap: 8px;
+    margin-top: 20px;
+  }
+  
+  .navTab {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .dashboardTitle h1 {
+    font-size: 20px;
+  }
+  
+  .dashboardSubtitle {
+    font-size: 13px;
+  }
+}
+
+/* Horizontal Cards Navigation (Alternative) */
+.dashboardNavHorizontal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.navTabHorizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-decoration: none;
+  color: #4b5563;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.navTabHorizontal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #d1d5db;
+}
+
+.navTabHorizontal.active {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+.navTabHorizontal svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 640px) {
+  .dashboardNavHorizontal {
+    grid-template-columns: 1fr 1fr;
+  }
+}
