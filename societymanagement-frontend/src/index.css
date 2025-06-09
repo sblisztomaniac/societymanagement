@@ -1,21 +1,10 @@
+/*! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* Import global styles */
+@import './styles/globals.css';
 
 a {
   font-weight: 500;
@@ -28,10 +17,64 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  min-width: 100vw;
   min-height: 100vh;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Ensure root container takes full width */
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full width container classes */
+.main-container,
+.homepage-container,
+.app-container {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Ensure no container is limiting width */
+.container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+}
+
+/* For flex layouts */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* Remove any Bootstrap container restrictions if using Bootstrap */
+.container-fluid {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 20px !important;
+}
+
+/* Responsive padding */
+@media (max-width: 768px) {
+  .main-container,
+  .homepage-container,
+  .app-container,
+  .container,
+  .container-fluid {
+    padding: 15px !important;
+  }
 }
 
 h1 {

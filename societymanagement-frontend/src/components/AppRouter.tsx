@@ -1,17 +1,19 @@
 import React from 'react';
 import { useApp } from '@/context/AppContext';
-import { RoleSelector } from '@/components/RoleSelector';
 import { ResidentSelector } from '@/components/resident/ResidentSelector';
 import { ResidentDashboard } from '@/components/resident/ResidentDashboard';
 import { AdminDashboard } from '@/components/admin/AdminDashboard';
+import { RoleSelection } from '@/components/RoleSelection';
 
 export const AppRouter: React.FC = () => {
   const { currentRole, currentResident } = useApp();
 
+  // Show role selection if no role is selected
   if (!currentRole) {
-    return <RoleSelector />;
+    return <RoleSelection />;
   }
 
+  // Resident flow
   if (currentRole === 'resident') {
     if (!currentResident) {
       return <ResidentSelector />;
@@ -19,9 +21,11 @@ export const AppRouter: React.FC = () => {
     return <ResidentDashboard />;
   }
 
+  // Admin flow
   if (currentRole === 'admin') {
     return <AdminDashboard />;
   }
 
-  return <RoleSelector />;
+  // Fallback to role selection
+  return <RoleSelection />;
 };
