@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { CheckCircle } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import { Resident } from '@/types';
@@ -41,6 +40,7 @@ export const ComplaintModal: React.FC<ComplaintModalProps> = ({ isOpen, onClose,
       flatNumber: resident.flatNumber,
       category,
       description: description.trim(),
+      status: 'open', // Adding required status field with default value 'open'
     });
 
     setStep(3);

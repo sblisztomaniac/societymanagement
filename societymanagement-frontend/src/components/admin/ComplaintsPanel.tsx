@@ -5,7 +5,6 @@ import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { MessageSquare, Clock, CheckCircle, AlertTriangle, Filter } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
-import { Complaint } from '@/types';
 
 export const ComplaintsPanel: React.FC = () => {
   const { complaints, updateComplaintStatus } = useApp();

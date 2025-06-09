@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Home, User, Plus, Edit } from 'lucide-react';
+import { Home, Plus, Edit } from 'lucide-react'; // User icon is not used
 import { useApp } from '@/context/AppContext';
 import { FlatModal } from './FlatModal';
 
